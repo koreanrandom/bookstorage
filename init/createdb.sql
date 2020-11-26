@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS bookstorageDB;
+USE bookstorageDB;
+
+CREATE TABLE IF NOT EXISTS book (
+id int(255) NOT NULL AUTO_INCREMENT,
+title varchar (255) DEFAULT NULL,
+year varchar (255) DEFAULT NULL,
+publisher varchar (255) DEFAULT NULL,
+PRIMARY KEY (id)
+) ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+
+CREATE TABLE IF NOT EXISTS author (
+id int(255) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+book_id int(255) NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (book_id) REFERENCES book(id)
+) ENGINE = InnoDB
+AUTO_INCREMENT = 1;
